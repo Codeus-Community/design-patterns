@@ -9,7 +9,11 @@ public class App {
 
         //TODO: Put your code here
 
-        HardcodedFileDataSource ds = new HardcodedFileDataSource(FILE);
+        //HardcodedFileDataSource ds = new HardcodedFileDataSource(FILE);
+
+        DataSource ds = new CompressionDecorator(
+                            new EncryptionDecorator(
+                                new FileDataSource(FILE)));
 
         //TODO: End of your code
 
