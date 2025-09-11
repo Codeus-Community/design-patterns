@@ -5,12 +5,7 @@ public class BankRequestProcessor {
         if (request.getType() == null) {
             throw new IllegalArgumentException("Request type is null");
         }
-        final RequestType type;
-        try {
-            type = RequestType.valueOf(request.getType());
-        } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("Unsupported type: " + request.getType());
-        }
+        final RequestType type = request.getType();
 
         if ((type == RequestType.TRANSFER || type == RequestType.BILL_PAYMENT)
                 && request.getAmount() > Constants.DAILY_LIMIT

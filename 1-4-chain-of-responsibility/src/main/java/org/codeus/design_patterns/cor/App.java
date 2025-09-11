@@ -4,11 +4,10 @@ public class App {
     public static void main(String[] args) {
         BankRequestProcessor processor = new BankRequestProcessor();
 
-        BankRequest transfer = new BankRequest("1", "TRANSFER", 1000, "user1");
-        BankRequest bill = new BankRequest("2", "BILL_PAYMENT", 2000, "user2");
-        BankRequest credit = new BankRequest("3", "CREDIT_APPLICATION", 150_000, "user3");
-        BankRequest tooBig = new BankRequest("4", "TRANSFER", 250_000, "user4");
-        BankRequest unknown = new BankRequest("5", "DEPOSIT", 500, "user5");
+        BankRequest transfer = new BankRequest("1", RequestType.TRANSFER, 1000, "user1");
+        BankRequest bill = new BankRequest("2", RequestType.BILL_PAYMENT, 2000, "user2");
+        BankRequest credit = new BankRequest("3", RequestType.CREDIT_APPLICATION, 150_000, "user3");
+        BankRequest tooBig = new BankRequest("4", RequestType.TRANSFER, 250_000, "user4");
 
         System.out.println("=== Running demo ===");
 
@@ -40,12 +39,7 @@ public class App {
             System.out.println("Too big transfer failed: " + e.getMessage());
         }
 
-        try {
-            processor.process(unknown);
-            System.out.println("After processing unknown: " + unknown);
-        } catch (Exception e) {
-            System.out.println("Unknown type failed: " + e.getMessage());
-        }
+        // No unsupported type example here since type is an enum now
 
         System.out.println("=== Demo finished ===");
     }

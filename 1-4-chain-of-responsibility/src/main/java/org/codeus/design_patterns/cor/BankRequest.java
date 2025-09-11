@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class BankRequest {
     private String requestId;
-    private String type;
+    private RequestType type;
     @Setter
     private double amount;
     private String userId;
