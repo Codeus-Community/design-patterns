@@ -4,14 +4,14 @@ import org.codeus.design_patterns.cor.handler.*;
 
 public class PipelineFactory {
 
-    public static Handler createPipeline(String type) {
+    public static Handler createPipeline(RequestType type) {
         Handler validation = new ValidationHandler();
         Handler limit = new LimitCheckHandler();
         Handler aml = new AmlCheckHandler();
         Handler commission = new CommissionHandler();
         Handler logging = new LoggingHandler();
 
-        if ("CREDIT_APPLICATION".equals(type)) {
+        if (type == RequestType.CREDIT_APPLICATION) {
             validation.setNext(aml);
             aml.setNext(logging);
             return validation;

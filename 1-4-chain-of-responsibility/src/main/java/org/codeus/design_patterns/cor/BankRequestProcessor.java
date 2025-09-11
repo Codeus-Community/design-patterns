@@ -4,6 +4,9 @@ import org.codeus.design_patterns.cor.handler.Handler;
 
 public class BankRequestProcessor {
     public void process(BankRequest request) {
+        if (request.getType() == null) {
+            throw new IllegalArgumentException("Request type is null");
+        }
         Handler pipeline = PipelineFactory.createPipeline(request.getType());
         pipeline.handle(request);
     }
