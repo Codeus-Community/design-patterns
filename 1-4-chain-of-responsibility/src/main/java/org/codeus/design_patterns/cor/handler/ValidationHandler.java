@@ -10,6 +10,5 @@ public class ValidationHandler extends Handler {
         if (type == null) {
             throw new IllegalArgumentException("Request type is null");
         }
-        // Enum type guarantees supported values
     }
 }
