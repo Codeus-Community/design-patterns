@@ -31,7 +31,7 @@ public class HtmlContract {
         // Contract-specific content (duplicated in PdfContract and DocxContract)
         html.append("<h1>CONTRACT DOCUMENT</h1>\n");
         html.append("<hr>\n");
-        html.append("<p><strong>Contract:</strong> ").append(contractName).append("</p>\n");
+        html.append("<p><strong>Contract Title:</strong> ").append(contractName).append("</p>\n");
         html.append("<p><strong>Department:</strong> ").append(department).append("</p>\n");
         html.append("<p><strong>Generated:</strong> ").append(timestamp).append("</p>\n");
         html.append("<p><strong>Type:</strong> Legal Contract</p>\n");
