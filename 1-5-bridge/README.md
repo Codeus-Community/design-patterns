@@ -43,8 +43,6 @@ Document Types × Export Formats = Total Classes
 - 📈 **Exponential growth** - adding formats/types multiplies classes
 - 🐛 **Bug multiplication** - same logic errors repeated everywhere
 
-# Hints
-
 ## 🌉 The Solution: Bridge Pattern
 
 ### Bridge Pattern Structure
